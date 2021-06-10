@@ -15,14 +15,26 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+// function addRandomGreeting() {
+//   const greetings =
+//       ['Winter is coming', "DNA doesn't make a family. Love does.", 'When you play the Game of Thrones, you win or you die'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+//   // Pick a random greeting.
+//   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+//   // Add it to the page.
+//   const greetingContainer = document.getElementById('greeting-container');
+//   greetingContainer.innerText = greeting;
+// }
+
+window.onload = () => {
+  const navMenu = document.querySelector('.nav-menu');
+  const navItems = document.querySelectorAll('.nav-item');
+  const hamburger = document.querySelector('.nav-toggle');
+  
+  const toggle = e => e.classList.toggle('is-active');
+  const toggleNav = ({ target }) => Array.from(navMenu.classList).includes('is-active') ? toggle(navMenu) : null;
+
+  hamburger.addEventListener('click', () => toggle(navMenu, 'is-active'));
+  Array.from(navItems).forEach(e => e.addEventListener('click', toggleNav));
 }
