@@ -12,3 +12,25 @@ body {
  /* background-color: beige; */
  background-image: url("/images/bg3.jpg");
 }
+
+section{
+   padding-top: 3rem;
+   padding-bottom: 3rem;
+}
+ 
+.section-1 {
+   background: #F8F8F8;
+}
+ 
+.section-2 {
+   background-color: #F8F8F8;
+}
+ 
+.section-3 {
+   background-color: #F8F8F8;
+}
+ 
+.section-4 {
+   background-color: #F8F8F8;
+   padding: 0.2rem;
+}

@@ -38,3 +38,12 @@ window.onload = () => {
   hamburger.addEventListener('click', () => toggle(navMenu, 'is-active'));
   Array.from(navItems).forEach(e => e.addEventListener('click', toggleNav));
 }
+
+/** Fetches the current date from the server and adds it to the page. */
+async function showWelcomeMessage() {
+  const responseFromServer = await fetch('/hello');
+  const textFromResponse = await responseFromServer.text();
+
+  const helloContainer = document.getElementById('hello-container');
+  helloContainer.innerText = textFromResponse;
+}
