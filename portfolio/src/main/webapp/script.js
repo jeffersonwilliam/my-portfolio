@@ -40,10 +40,38 @@ window.onload = () => {
 }
 
 /** Fetches the current date from the server and adds it to the page. */
-async function showWelcomeMessage() {
-  const responseFromServer = await fetch('/hello');
-  const textFromResponse = await responseFromServer.text();
+// async function showWelcomeMessage() {
+//   const responseFromServer = await fetch('/hello');
+//   const textFromResponse = await responseFromServer.json();
 
-  const helloContainer = document.getElementById('hello-container');
-  helloContainer.innerText = textFromResponse;
+//   const helloContainer = document.getElementById('hello-container');
+//   helloContainer.innerText = textFromResponse;
+
+// //   helloContainer.innerHTML = '';
+
+// //   reply.html = ' ';  
+
+//   const rand = Math.floor((Math.random() * 3) + 1);
+
+//   if (rand == 1){
+//     helloContainer.innerText = 'Name: ' + textFromResponse.Name
+//   }
+//   else if (rand == 2){
+//     helloContainer.innerText = 'Height: ' + reply.height
+//   }
+//   else{
+//     helloContainer.innerText = 'Color: ' + reply.color
+//   }
+// }
+
+
+
+async function showWelcomeMessage() {
+    const responseFromServer = await fetch("/hello");
+    const textFromResponse = await responseFromServer.json();
+    // console.log(textFromResponse);
+    const choice = textFromResponse[Math.floor(Math.random() * textFromResponse.length)];
+
+    const responseContainer = document.getElementById("response-container");
+    responseContainer.innerText = choice;
 }
