@@ -34,8 +34,7 @@ public class TranslationServlet extends HttpServlet {
 
     // Do the translation.
     Translate translate = TranslateOptions.getDefaultInstance().getService();
-    Translation translation =
-        translate.translate(originalText, Translate.TranslateOption.targetLanguage(languageCode));
+    Translation translation = translate.translate(originalText, Translate.TranslateOption.targetLanguage(languageCode));
     String translatedText = translation.getTranslatedText();
 
     // Output the translation.
